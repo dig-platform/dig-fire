@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {DigFire} from '@dig-platform/dig-fire';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dig-fire-demo';
+  public title$ = this.digFire.app?.getObservable('title');
+  constructor(private digFire: DigFire) {
+  }
 }

@@ -7,6 +7,7 @@
     "build": "ng build",
     "build:dig-fire": "ng build dig-fire --watch",
     "build:lib": "npm run build:dig-fire",
+    "deploy:dig-fire": "ng build dig-fire --prod && cd dist/dig-fire && npm publish --public",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

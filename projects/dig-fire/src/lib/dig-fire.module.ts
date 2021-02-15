@@ -1,12 +1,29 @@
-import { NgModule } from '@angular/core';
-import { DigFireComponent } from './dig-fire.component';
+import {ModuleWithProviders, NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {DigAppInjectionService} from './dig-app-injection.service';
+import {DigAppOptions} from './interfaces';
+import {DigFire} from './dig-fire';
 
 
 
 @NgModule({
-  declarations: [DigFireComponent],
+  declarations: [],
   imports: [
-  ],
-  exports: [DigFireComponent]
+    CommonModule,
+  ]
 })
-export class DigFireModule { }
+export class DigFireModule {
+  static forRoot(digApp: DigAppOptions): ModuleWithProviders<DigFireModule> {
+    return {
+      ngModule: DigFireModule,
+      providers: [
+        {
+          provide: DigAppInjectionService,
+          useValue: digApp
+        },
+        DigFire,
+      ]
+    };
+  }
+}
+
