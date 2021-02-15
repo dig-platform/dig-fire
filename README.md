@@ -2,13 +2,18 @@
 
 ## Installation
 
+```shell script
+git clone https://github.com/dig-platform/dig-fire.git
+cd dig-fire
+npm install
+```
 
+## Running the app
 
-## Running the demo
-
-
-
-## Creating Libraries
+```shell script
+npm run build:lib
+npm start
+```
 
 ### Create and configure the library
 
@@ -49,10 +54,32 @@ Then update the name of the package in your `tsconfig.json` file:
 }
 ```
 
+Finally add a build command to the app's `package.json` scripts section:
+
+```json
+{
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:dig-fire": "ng build dig-fire --watch",
+    "build:dig-fire-profile": "ng build dig-fire-profile --watch",
+    "build:lib": "npm run build:dig-fire && npm run build:dig-fire-profile",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  }
+```
+
 ### Building your library
 
 Now you are ready to build your library:
 
-`ng build dig-fire-profile --watch`
+`ng build:dig-fire-profile`
+
+Or build all of the libraries
+
+`ng build:lib`
 
 ### Create your demo
+
+> todo
