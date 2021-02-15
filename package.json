@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:dig-fire": "ng build dig-fire --watch",
-    "build:dig-fire-profile": "ng build dig-fire-profile --watch",
-    "build:lib": "npm run build:dig-fire && npm run build:dig-fire",
+    "build:lib": "npm run build:dig-fire",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
